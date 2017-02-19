@@ -1,0 +1,315 @@
+ /* http://meyerweb.com/eric/tools/css/reset/ 
+    v2.0 | 20110126
+    License: none (public domain)
+ */
+
+ html, body, div, span, applet, object, iframe,
+ h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+ a, abbr, acronym, address, big, cite, code,
+ del, dfn, em, img, ins, kbd, q, s, samp,
+ small, strike, strong, sub, sup, tt, var,
+ b, u, i, center,
+ dl, dt, dd, ol, ul, li,
+ fieldset, form, label, legend,
+ table, caption, tbody, tfoot, thead, tr, th, td,
+ article, aside, canvas, details, embed, 
+ figure, figcaption, footer, header, hgroup, 
+ menu, nav, output, ruby, section, summary,
+ time, mark, audio, video {
+ 	margin: 0;
+ 	padding: 0;
+ 	border: 0;
+ 	font-size: 100%;
+ 	font: inherit;
+ 	vertical-align: baseline;
+ }
+ /* HTML5 display-role reset for older browsers */
+ article, aside, details, figcaption, figure, 
+ footer, header, hgroup, menu, nav, section {
+ 	display: block;
+ }
+ body {
+ 	line-height: 1;
+ }
+ ol, ul {
+ 	list-style: none;
+ }
+ blockquote, q {
+ 	quotes: none;
+ }
+ blockquote:before, blockquote:after,
+ q:before, q:after {
+ 	content: '';
+ 	content: none;
+ }
+ table {
+ 	border-collapse: collapse;
+ 	border-spacing: 0;
+ }
+
+
+ body {
+ 	background: grey;
+ }
+
+ h1 {
+ 	font-family: 'Lato', sans-serif;
+ 	font-size: 3em;
+ 	font-weight: 300;
+ 	letter-spacing: 2px;
+ 	word-spacing: 5px;
+ }
+
+ header {
+ 	background: orange;
+ 	display: flex;
+ 	justify-content:  center;
+ 	align-items: center;
+ 	height: 18em;
+ 	background-image: linear-gradient(#ff9d2f, #ff6126);
+ 	position: relative;
+ }
+
+ header h1 {
+ 	text-align: center;
+ 	color: #fff;
+ }
+
+
+.header-shape {
+ 	position: absolute;
+ 	 bottom: 0;
+ 	 width: 100%;
+ 	 height: 7vw;
+ }
+
+ svg polygon {
+ 	fill: #2b2b2b;
+ }
+
+ /* ===========GALLERY SECTION==============================
+ ===========================================================*/
+
+.svg_gallery {
+	display: flex;
+	flex-wrap: wrap;
+	background: #2b2b2b;
+	text-align: center;
+}
+
+.items {
+	flex: 1 1 50%;
+
+}
+
+@media (min-width:769px) {
+	.items {
+		flex: 1 1  33.333%;
+	}
+
+	h1 {
+		font-size: 5em;
+		margin-top: -1em;
+	}
+}
+
+ .item {
+ 	height: 10em;
+ 	width: 10em;
+
+ }
+
+
+
+ /*item 1 svg */
+
+.svg1 .path {
+  stroke-dasharray: 6000;
+  stroke-dashoffset: 6000;
+  transition: 10s all ease-out;
+}
+
+.svg1:hover .path {
+  stroke-dashoffset: 0;
+}
+
+/* item 2 svg */
+
+.svg2 circle {
+  fill: none;
+  stroke-width: 5px;
+  stroke: #fff;
+  stroke-dasharray: 800;
+  stroke-dashoffset: 800;
+  opacity: 0;
+  animation: 2s circle-outline infinite forwards;
+}
+
+.svg2 path {
+  fill: none;
+  stroke: #fafafa;
+  stroke-width: 3px;
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  opacity: 0;
+  animation: 2s text infinite forwards;
+}
+
+@keyframes circle-outline {
+  from {
+    stroke-dashoffset: 800;
+    opacity: 0;
+  }
+  to {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes text {
+  from {
+    stroke-dashoffset: 400;
+    opacity: 0;
+  }
+  to {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+}
+
+/* item3 svg */
+.svg3 rect {
+  fill: none;
+  stroke: #fafafa;
+  stroke-width: 8px;
+  stroke-dasharray: 1500;
+  stroke-dashoffset: 1500;
+  animation: 2s square forwards infinite;
+}
+
+.svg3 line {
+  stroke: #fafafa;
+  stroke-dasharray: 400;
+  stroke-dashoffset: 400;
+  animation: 2s line forwards infinite  1s;
+}
+
+
+.svg3 path {
+  fill: #fafafa;
+  opacity: 0;
+  animation: 4s fade forwards 1.5s infinite;
+}
+
+@keyframes square  {
+  from {
+    stroke-dashoffset: 1500;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes line {
+  from {
+    stroke-dashoffset: 400;
+  }
+  to {
+    stroke-dashoffset:-300;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* item 4 svg */
+
+.svg4 polygon {
+ stroke-dasharray: 500;
+ stroke-dashoffset: 500;
+ animation: 2s diamond forwards infinite;
+ transform-origin: center;
+ fill:  #fafafa;
+}
+
+@keyframes diamond {
+  from {
+    stroke-dashoffset: 500;
+  }
+  to {
+    stroke-dashoffset: 0;
+    transform: rotate(360deg);
+  }
+}
+
+/*item 5 svg */
+
+.svg5 path {
+  fill: #fafafa;
+}
+
+.svg5 line {
+  stroke:#fafafa;
+  stroke-dasharray: 25;
+  stroke-dashoffset: 25;
+  animation: .5s movelines forwards infinite;
+}
+
+
+@keyframes movelines {
+  from {
+    stroke-dashoffset: -25;
+  }
+  to {
+    stroke-dashoffset: 25;
+  }
+}
+
+/* item 6 svg */
+
+.svg6 polygon {
+  stroke-width: 3px;
+  transform-origin: center;
+  stroke: white;
+}
+#top polygon {
+  fill: #000;
+  animation: 1s scale infinite alternate;
+}
+
+#middle polygon {
+  fill: #fafafa;
+  animation: 1s scale infinite alternate;
+}
+#bottom polygon { 
+  fill: #000;
+  animation: 1s scale infinite alternate;
+  
+}
+
+@keyframes scale {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.5);
+  }
+}
+
+/*footer */
+
+footer {
+	background: #ff6126;
+}
+footer p {
+	font-size: .4em;
+	color: #fafafa;
+}
+
+
